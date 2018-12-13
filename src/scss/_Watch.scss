@@ -1,0 +1,430 @@
+
+.current-preview-container {
+	position: relative;
+	margin-top: 2vw;
+
+	@include breakpoint(smallTablet) {
+		margin-top: 5vw;
+	}
+
+	@include breakpoint(smallDesktop) {
+		margin-top: 8vw;
+ 	}
+
+ 	@include breakpoint(largeDesktop) {
+		margin-top: 6.5vw;		
+	}
+
+
+	.preview__cta-copy-container {
+		position: absolute;
+		z-index: 3;
+		height: 100%;
+		width: 100%;
+		padding-left: 6vw;
+		padding-right: 0;
+		padding-top: 5vw;
+		display: flex;
+		justify-content: space-between;
+		align-items: space-between;
+		flex-direction: column;
+
+		@include breakpoint(tablet) {
+			padding-left: 4vw;
+			padding-top: 3vw;
+		}
+
+		@include breakpoint(smallDesktop) {
+			padding-left: 8vw;
+		}
+
+
+
+
+		.preview__cta-copy {
+			text-shadow: 0px 0px 2px $plum;
+			z-index: 3;
+			font-size: 7vw;
+			font-family: "futura-pt", sans-serif;
+			letter-spacing: 0.2vw;
+			display: flex;
+			flex-direction: column;
+
+			@include breakpoint(smallTablet) {
+				font-size: 5vw;
+			}
+			
+			@include breakpoint(tablet) {
+				font-size: 3vw;
+			}
+
+			@include breakpoint(smallDesktop) {
+				font-size: 3vw;
+			}
+
+			h1 {
+				font-family: "fenwick-outline", sans-serif;
+				color: $fuchsia;
+				
+				font-size: 9.5vw;
+
+				@include breakpoint(smallTablet) {
+					font-size: 7vw;
+				}
+
+				@include breakpoint(tablet) {
+					font-size: 5vw;
+				}
+
+				@include breakpoint(smallDesktop) {
+					font-size: 4.5vw;
+				}
+			}
+
+			h2 {
+				color: $aqua;
+			}
+
+			.season-1-cta {
+				display: none;
+				align-self: flex-start;
+				color: $purple;
+				// margin-top: 2vw;
+				margin-top: 18vw;
+				justify-content: flex-start;
+				align-items: center;
+				// border-left: 3vw double $fuchsia;
+				// border-left: 1vw double $fuchsia;
+				// line-height: 3.2vw;
+				line-height: 7.2vw;
+				// padding-left: 10px;
+				// padding-right: 1vw;
+				// // background-color: rgba(255, 63, 255, 0.2);
+				// border-bottom-right-radius: 1.5vw;
+				// border-top-right-radius: 1.5vw;
+				// border-bottom-right-radius: 3vw;
+				// border-top-right-radius: 3vw;
+				// margin-left: -8vw;
+				// padding-left: 7vw;
+				// font-size: 2.5vw;
+				// font-size: 6.5vw;
+
+				@include breakpoint(smallTablet) {
+					display: flex;
+					margin-top: 5vw;
+				}
+
+				@include breakpoint(tablet) {
+					margin-top: 2vw;
+				}
+				
+				.arrow {
+					color: $fuchsia;
+					margin-left: 1.75vw;
+					letter-spacing: 0;
+				}
+			}
+
+			
+		}
+
+		#videoControls {
+			display: none;
+			opacity: 0;
+			transition: 0.5s;
+			margin-right: -100%;
+			z-index: 3;
+			background-color: rgba(33, 16, 61, 1);
+			border-radius: 5vw;
+			border-bottom-right-radius: 0;
+			border-top-right-radius: 0;
+			border-right: 1vw double rgba(98, 220, 255, 1);
+			align-self: flex-end;
+			transition: 0.1s;
+			transform: translateY(22%);
+			background-size: 100% 100%;
+			background-position: center;
+			justify-content: space-between;
+			align-items: center;
+			width: 40vw;
+			padding: 1vw;
+			padding-right: 8vw;
+			padding-left: 8vw;
+
+			@include breakpoint(tablet) {
+				display: flex;
+			}
+
+
+			&:hover {
+				background-color: rgba(33, 16, 61, 1);
+				border-right: 1vw double $aqua;
+			}
+
+			#togglePause, #toggleMute, #next, #previous, #stop {
+				height: 3.4vw;
+				width: 3.4vw;
+				background-repeat: no-repeat;
+				background-position: center;
+				opacity: 0.5;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+			
+			.play {	
+				background-image: url(../img/video_icons/play.svg);
+			}
+
+			.pause{	
+				background-image: url(../img/video_icons/pause.svg);
+			}
+
+			#next {
+				background-image: url(../img/video_icons/next.svg);
+			}
+
+			#previous {
+				background-image: url(../img/video_icons/previous.svg);
+			}
+			
+			#stop {
+				background-image: url(../img/video_icons/stop.svg);
+			}
+
+			.turn-sound-on {
+				background-image: url(../img/video_icons/unmute.svg);
+			}
+
+			.turn-sound-off {
+				background-image: url(../img/video_icons/mute.svg);
+			}		
+
+			&.displayed {
+				margin-right: 0;
+				opacity: 1;
+			}
+		}
+	}
+
+}
+
+#currentPreviewContainer {
+	height: 62vw;
+	width: 100vw;
+	margin-top: 1vw;
+	background-color: black;
+	background-image: url(../img/pilot-still.jpg);
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+
+	@include breakpoint(smallTablet) {
+		height: 60vw;
+		width: 118vw;
+	}
+
+	@include breakpoint(tablet) {
+	    height: 43vw;
+	    width: 100vw;
+	}
+
+	@include breakpoint(smallDesktop) {
+		box-shadow: 0px 0px 3vw $pink, 0px 0px 2vw $red;
+		height: 42vw;
+		width: 120vw;
+		transform: translate(-10vw);
+		margin-top: 3vw;
+	}
+
+	.preview__video--video {
+		display: none;
+		height: 50vw;
+		min-width: 100vw;
+
+		@include breakpoint(tablet) {
+			display: initial;
+		}
+	}
+}
+
+.preview-nav-container {
+	box-sizing: initial;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	flex-wrap: nowrap;
+	position: relative;
+	margin-top: 2.5vw;
+	padding-bottom: 5vw;
+	margin-bottom: 10vw;
+	
+	color: $teal;
+	font-family: "futura-pt";
+
+	@include breakpoint(smallTablet) {
+		background-color: black;
+		align-items: center;
+		padding-top: 5vw;
+	}
+	
+	@include breakpoint(tablet) {
+		padding-top: 2vw;
+		padding-bottom: 2vw;
+	}
+
+	@include breakpoint(smallDesktop) {
+		margin-bottom: 15vw;
+		margin-top: 5vw;
+	}
+
+	@include breakpoint(largeDesktop) {
+		margin-bottom: 12vw;
+	}
+
+	#previewNavContainer {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+
+		@include breakpoint(smallTablet) {
+			width: 80%;
+		}
+		
+		@include breakpoint(tablet) {
+			flex-direction: row;
+			width: 100%;
+			align-items: flex-start;
+			justify-content: space-around;
+		}
+
+		@include breakpoint(smallDesktop) {
+			justify-content: center;
+		}
+
+
+		.preview-nav__item {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			margin-top: 2.5vw;
+			margin-bottom: 0;
+			background-color: black;
+
+			@include breakpoint(tablet) {
+				width: 28vw;
+			}
+
+			@include breakpoint(smallDesktop) {
+				width: 23vw;
+				margin: 0.75vw;
+			}
+		}
+
+		.preview__image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 56vw;
+			width: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			@include breakpoint(smallTablet) {
+				height: 45vw;
+				border: 3px double rgba(0, 0, 0, 0);
+				box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
+
+				&:hover {
+					border: 3px double $fuchsia;
+					box-shadow: 0px 0px 20px $fuchsia;
+
+					.play-button {
+						opacity: 1;
+					}
+				}
+			}
+
+			@include breakpoint(tablet) {
+				height: 15.7vw;
+
+			}
+
+			@include breakpoint(smallDesktop) {
+				margin-left: -4px;
+				height: 13vw;
+			}
+			
+		}
+
+		.preview-nav__title {
+			font-family: "fenwick-outline";
+			color: $purple;
+			font-size: 2rem;
+			padding: 5px;
+			padding-left: 0;
+			padding-top: 10px;
+		}
+
+		.preview-nav__title,
+		.preview-nav__description {
+			margin: 2.5vw;
+
+			@include breakpoint(smallTablet) {
+				margin: 0.5vw;
+			}
+		}
+
+		.preview-nav__description {
+			margin-top: 0;
+			color: $teal;
+			font-size: 1.2rem;
+			line-height: 1.5rem;
+			padding-bottom: 2.5vw;
+
+			@include breakpoint(smallDesktop) {
+				padding: 0;
+			}
+		}
+	}
+
+	.more-episodes-button {
+		background-color: black;
+	    font-size: 5vw;
+	    width: 100%;
+	    padding: 3vw;
+	    margin-top: -1vw;
+		text-align: right;
+		margin-right: 13.2vw;
+		color: $aqua;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		.arrow {
+			color: $fuchsia;
+			margin-left: 1vw;
+		}
+
+		@include breakpoint(tablet) {
+			font-size: 3vw;
+			padding: 2vw;
+			margin-right: 2.5vw;
+		}
+
+		@include breakpoint(smallDesktop) {
+			margin: 0;
+			font-size: 2vw;
+		}
+	}
+}

@@ -1,0 +1,383 @@
+.Header,
+.social-media-icon,
+.social-media-block,
+.social-media-icon,
+.glow,
+.netflix-logo,
+.watch-on-netflix,
+.watch-on-netflix__copy,
+.navbar {
+	margin: 0;
+}
+
+.Header {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-bottom: 0;
+	align-items: center;
+	background-color: black;
+	padding: 5%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.Header__not-nav {
+	trasition: 0.3s;
+	position: relative;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+
+	&.active {
+		&:nth-child(2),
+		:nth-child(3),
+		:nth-child(4) {
+			transform: translate(100vw);
+		}
+
+		&:last-child {
+			transform: none;
+		}
+	}
+}
+
+.hamburger {
+	z-index: 5;
+	width: 55px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: 0.3s;
+
+	@include breakpoint(tablet) {
+		display: none;
+	}
+
+	.hamburger-bars {
+		transition: 0.3s;
+		height: 6px;
+		box-shadow: -2px 2px 35px rgba(255, 209, 252, 0.5);
+		background-color: $pink;
+		border-radius: 2vw;
+		margin-bottom: 7px;
+		background: radial-gradient(ellipse at 35% 60%, #ffd1fc 13%, #ff33cc 63%, #9d009d 87%);
+
+		&:nth-child(2) {
+			box-shadow: 2px -2px 35px rgba(255, 209, 252, 0.5);
+			background: radial-gradient(ellipse at 72% 47%, #ffd1fc 13%, #ff33cc 63%, #9d009d 87%);
+		}
+
+		&:last-child {
+			box-shadow: 0 0 35px rgba(255, 209, 252, 0.5);
+			background: radial-gradient(ellipse at 45%, #ffd1fc 12%, #ff33cc 63%, #9d009d 107%);
+			margin-bottom: 0;
+		}
+	}
+
+	&.active {
+		margin-left: 50vw;
+		.hamburger-bars {
+			margin: 0;
+			&:first-child {
+				transform: translateY(50%) rotate(40deg);
+			}
+			&:nth-child(2) {
+				display: none;
+			}
+			&:last-child {
+				transform: translateY(-50%) rotate(-40deg);
+			}
+		}
+	}
+}
+
+
+.social-media-block,
+.watch-on-netflix {
+	@include breakpoint(smallDesktop) {
+		transform: translateY(10px);
+	}
+}
+
+.social-media-block {
+	display: none;
+	display: none;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: baseline;
+
+	@include breakpoint(tablet) {
+		display: flex;
+	}
+}
+
+.social-media-icon {
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 5vw;
+
+	@include breakpoint(smallDesktop) {
+		height: 3vw;
+	}
+}
+
+.facebook {
+	width: 3.1vw;
+	background-image: url(../img/header/social/facebook.svg);
+	@include breakpoint(smallDesktop) {
+		width: 1.8vw;
+	}
+}
+
+.instagram {
+	margin-right: 2.5vw;
+	margin-left: 2.5vw;
+	width: 5.1vw;
+	background-image: url(../img/header/social/instagram.svg);
+
+	@include breakpoint(smallDesktop) {
+		margin-left: 25px;
+		margin-right: 26px;
+		width: 3vw;
+	}
+}
+
+.twitter {
+	width: 6vw;
+	background-image: url(../img/header/social/twitter.svg);
+
+	@include breakpoint(smallDesktop) {
+		width: 3.6vw;
+	}
+}
+
+.glow {
+	min-height: 30px;
+	min-width: 120px;
+	height: 11vw;
+	width: 46.5vw;
+	margin-left: -1vw;
+	background: url(../img/header/glowgo.svg);
+	background-position: -0.3vw center;
+	overflow: hidden;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-top-left-radius: 10vw;
+	border-bottom-left-radius: 10vw;
+	border-top-right-radius: 3vw;
+	border-bottom-right-radius: 16vw;
+	animation: throbLight;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+
+	@include breakpoint(tablet) {
+		height: 7vw;
+    	width: 29.5vw;
+		margin-left: -2vw;
+	}
+
+	@include breakpoint(smallDesktop) {
+		height: 7.7vw;
+		width: 28vw;
+	}
+
+}
+
+.n-logo-only {
+	height: 11vw;
+	width: 5.5vw;
+	max-height: 70px;
+	max-width: 37px;
+	background-image: url(../img/header/n-logo.svg);
+	background-size: cover;
+	background-position: center;
+	filter: drop-shadow(0px 0px 10px rgba(255, 209, 226, 0.2));
+
+	@include breakpoint(tiny) {
+	    height: 40px;
+	    width: 22px;
+	}
+
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}
+
+.watch-on-netflix {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	@include breakpoint(tablet) {
+		display: flex;
+	}
+}
+
+.watch-on-netflix__copy {
+	text-shadow: 0px 0px 2px rgba(255, 164, 249, 0.2);
+	font-size: 1.6vw;
+	color: $pink;
+	font-family: "futura-pt";
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	margin-bottom: 2px;
+
+	@include breakpoint(smallDesktop) {
+		font-size: 1vw;
+	}
+}
+
+.netflix-logo {
+	height: 3vw;
+	width: 9.5vw;
+	background: url(../img/header/netflix-logo.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: sans-serif;
+	height: 5vw;
+    width: 16.5vw;
+
+    @include breakpoint(smallDesktop) {
+    	height: 3.6vw;
+    	width: 11vw;
+    }
+}
+
+.navbar {
+	display: none;
+	box-shadow: 0 0 1.5vw $pink;
+	padding-top: 19.4vw;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	position: fixed;
+	padding-bottom: 5vw;
+	padding-left: 5vw;
+	left: -77vw;
+	width: 75vw;
+	z-index: 4;
+	background-color: black;
+	justify-content: space-between;
+	transition: 0.3s;
+
+	&.active {
+		display: flex;
+		left: 0;
+	}
+
+	@include breakpoint(tablet) {
+		display: flex;
+		position: initial;
+		width: 100%;
+		left: 0;
+		padding-top: 0.7vw;
+		padding-bottom: 0.3vw;
+		box-shadow: none;
+		flex-direction: row;
+		padding: 0;
+	}	
+}
+
+.nav-link {
+	padding: 5vw;
+	font-family: "futura-pt";
+	text-align: left;
+	text-decoration: none;
+	color: $aqua;
+	font-size: 1.65rem;
+	letter-spacing: 0.05rem;
+	text-shadow: 0px 0px 5px rgba(98, 220, 255, 0.3);
+	transition: 0.2s;
+
+	@include breakpoint(tablet) {
+		padding: 0;
+		font-size: 2.2vw;
+		margin-top: 2.5vw;
+		text-align: center;
+	}
+}
+
+@include breakpoint(tablet) {
+	.nav-link:hover {
+		color: rgba(255, 255, 255, 1);
+		animation-name: flicker;
+		animation-duration: 0.5s;
+		animation-timing-function: cubic-bezier(1,1,.98,.03);
+
+		text-shadow: 	1px 1px 0.1rem rgba(98, 220, 255, 1),
+						-1px -1px 0.1rem rgba(98, 220, 255, 1),
+						1px 0px 0.1rem rgba(98, 220, 255, 1),
+						0px 1px 0.1rem rgba(98, 220, 255, 1),
+						-1px 0px 0.1rem rgba(98, 220, 255, 1),
+						0px -1px 0.1rem rgba(98, 220, 255, 1),
+						0px 0px 0.1rem rgba(98, 220, 255, 1);
+	}
+}
+
+.nav-link.active,
+.nav-link.active:hover {
+	animation: none;
+	color: $darkpink;
+	text-shadow: 	1px 1px 0.3rem rgba(101, 5, 32, 0.7), 
+					-1px -1px 0.3rem rgba(101, 5, 32, 0.7), 
+					1px 0px 0.3rem rgba(101, 5, 32, 0.7), 
+					0px 1px 0.3rem rgba(101, 5, 32, 0.7),
+					-1px 0px 0.3rem rgba(101, 5, 32, 0.7), 
+					0px -1px 0.3rem rgba(101, 5, 32, 0.7),
+					0px 0px 0.3rem rgba(101, 5, 32, 0.7),
+
+					1px 1px 0.3rem rgba(101, 5, 32, 0.7), 
+					-1px -1px 0.3rem rgba(101, 5, 32, 0.7), 
+					1px 0px 0.3rem rgba(101, 5, 32, 0.7), 
+					0px 1px 0.3rem rgba(101, 5, 32, 0.7),
+					-1px 0px 0.3rem rgba(101, 5, 32, 0.7), 
+					0px -1px 0.3rem rgba(101, 5, 32, 0.7),
+					0px 0px 0.3rem rgba(101, 5, 32, 0.7),
+
+					1px 1px 0.3rem rgba(101, 5, 32, 1), 
+					-1px -1px 0.3rem rgba(101, 5, 32, 1), 
+					1px 0px 0.3rem rgba(101, 5, 32, 1), 
+					0px 1px 0.3rem rgba(101, 5, 32, 1),
+					-1px 0px 0.3rem rgba(101, 5, 32, 1), 
+					0px -1px 0.3rem rgba(101, 5, 32, 1),
+					0px 0px 0.3rem rgba(101, 5, 32, 1),
+
+					1px 1px 0.4rem rgba(101, 5, 32, 1), 
+					-1px -1px 0.4rem rgba(101, 5, 32, 1), 
+					1px 0px 0.4rem rgba(101, 5, 32, 1), 
+					0px 1px 0.4rem rgba(101, 5, 32, 1),
+					-1px 0px 0.4rem rgba(101, 5, 32, 1), 
+					0px -1px 0.4rem rgba(101, 5, 32, 1),
+					0px 0px 0.4rem rgba(101, 5, 32, 1),
+
+					1px 1px 0.4rem rgba(101, 5, 32, 1), 
+					-1px -1px 0.4rem rgba(101, 5, 32, 1), 
+					1px 0px 0.4rem rgba(101, 5, 32, 1), 
+					0px 1px 0.4rem rgba(101, 5, 32, 1),
+					-1px 0px 0.4rem rgba(101, 5, 32, 1), 
+					0px -1px 0.4rem rgba(101, 5, 32, 1),
+					0px 0px 0.4rem rgba(101, 5, 32, 1),
+
+					1px 1px 0.5rem rgba(101, 5, 32, 1), 
+					-1px -1px 0.5rem rgba(101, 5, 32, 1), 
+					1px 0px 0.5rem rgba(101, 5, 32, 1), 
+					0px 1px 0.5rem rgba(101, 5, 32, 1),
+					-1px 0px 0.5rem rgba(101, 5, 32, 1), 
+					0px -1px 0.5rem rgba(101, 5, 32, 1),
+					0px 0px 0.5rem rgba(101, 5, 32, 1),
+
+					1px 1px 0.6rem rgba(101, 5, 32, 0.8), 
+					-1px -1px 0.6rem rgba(101, 5, 32, 0.8), 
+					1px 0px 0.6rem rgba(101, 5, 32, 0.8), 
+					0px 1px 0.6rem rgba(101, 5, 32, 0.8),
+					-1px 0px 0.6rem rgba(101, 5, 32, 0.8), 
+					0px -1px 0.6rem rgba(101, 5, 32, 0.8),
+					0px 0px 0.6rem rgba(101, 5, 32, 0.8);
+}
+
+

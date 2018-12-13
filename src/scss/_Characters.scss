@@ -1,0 +1,438 @@
+
+.character-navigation {
+	width: 100%;
+	height: 13vw;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+
+	#pinwheel {
+		border-radius: 50%;
+		box-sizing: initial;
+		animation: spin;
+		animation-timing-function: linear;
+		animation-duration: 25s;
+		animation-iteration-count: infinite;
+		background-position: center;
+		background-repeat: no-repeat;
+		min-width: 220vw;
+		min-height: 220vw;
+		background-image: url('../img/character_pages/pinwheel.svg');
+		background-size: 200% 200%;
+		margin-top: -40vw;
+		margin-left: -90vw;
+		margin-right: -20vw;
+		margin-bottom: -25vw;
+	}
+
+	#characterIcons {
+		justify-content:space-around;
+		align-items: space-around;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		height: 12vw;
+
+		figure {
+			z-index: 3;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 6vw;
+			width: 6vw;
+			filter: drop-shadow(0px 0px 0.2vw black);
+			position: absolute;
+			top: 50%;
+
+			
+			&:nth-child(even) {
+				transform: translate(-50%, -2vw);
+
+			}
+
+			&:nth-child(odd) {
+				transform: translate(-50%, -4vw);
+			}
+		}
+		
+		#zoyaIcon {
+			height: 7vw;
+			width: 7vw;
+			transform: translate(-6vw, -5vw) rotate(-20deg);
+		}
+
+		
+		#beirutIcon {
+			height: 5.5vw;
+			width: 5.5vw;
+			transform: translate(-0.6vw, -0.6vw) rotateZ(15deg) rotateY(180deg);
+		}
+		
+		#britannicaIcon {
+			height: 5.7vw;
+			width: 5.7vw;
+			transform: translate(-5vw, -5vw) rotate(4deg);
+		}
+
+		#junkchainIcon {
+			height: 7vw;
+			width: 17vw;
+			transform: translate(-10.5vw, -1vw) rotate(-5deg);
+		}
+
+		#glowbotIcon {
+			height: 10vw;
+			transform: translate(-2.6vw, -5.3vw) rotate(18deg);
+		}
+
+		#libertyIcon {
+			transform: translate(-2vw, -5.5vw) rotate(40deg) rotateX(180deg);
+		}
+
+		#jennyIcon {
+			height: 5.7vw;
+			width: 5.7vw;
+			transform: translate(-5.1vw, 0vw) rotate(20deg);
+		}
+
+		#vickyIcon {
+			transform:  translate(1.8vw, -6vw) rotate(7deg);
+		}
+
+		#ednaIcon {
+			transform: translate(0vw, -6vw) rotate(5deg);	
+		}
+
+		#ethelIcon {
+			height: 6.5vw;
+			width: 6.5vw;
+			transform: translate(0.8vw, -1vw) rotate(-4deg);
+		}
+
+		#macchuIcon {
+			height: 5.5vw;
+		    width: 5.5vw;
+		    transform:  translate(3.6vw, -0.8vw) rotate(10deg);
+		}
+
+		#directorIcon {
+			height: 6vw;
+			width: 7vw;
+		    transform: translate(1.4vw, -5.5vw) rotate(-18deg);
+		}
+
+		#melroseIcon {
+		    transform: translate(2.4vw, -5.5vw) rotate(15deg);
+		}
+
+		#justineIcon {
+			transform: translate(2vw, 0.2vw) rotate(-6deg);
+			height: 5.5vw;
+			width: 5.5vw;
+		}
+
+		#sheilaIcon {
+			height: 5.5vw;
+			width: 5.5vw;
+			transform: translate(0.8vw, -5.4vw) rotate(-1deg);
+		}
+
+		#queenIcon {
+		    transform: translate(1.3vw, -1.2vw) rotate(-7deg);
+		}
+	}
+}
+
+h1 {
+	font-family: "fenwick-outline", sans-serif;
+	color: $teal;
+}
+
+h2 {
+	color: $darkpink;
+	font-family: "futura-pt";
+}
+
+p {
+	color: $purple;
+}
+
+.character-info-container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap-reverse;
+	text-align: right;
+	height: 87vw;
+	background-image: url(../img/character_pages/zoya-info-bg.jpg);
+	background-position: left bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 3.5vw 9vw 0 0;
+	font-family: "futura-pt";
+	margin-bottom: 5vw;
+
+	@include breakpoint(smallTablet) {
+		height: 57vw;
+	}
+
+	@include breakpoint(tablet) {
+		padding: 5vw 5vw 0 0;
+		flex-wrap: nowrap;
+		align-items: flex-end;
+	}
+
+
+	h1, h2 {
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 11.8vw;
+		text-transform: uppercase;
+		margin-bottom: 1vw;
+		letter-spacing: 0.1vw;
+
+		@include breakpoint(tablet) {
+			font-size: 3.5vw;
+		}
+	}
+
+	h2 {
+		font-size: 6.5vw;
+		color: $darkpink;
+		text-transform: uppercase;
+		letter-spacing: 0.15vw;
+		width: 62vw;
+
+		@include breakpoint(tablet) {
+			font-size: 1.9vw;
+			width: initial;
+		}
+	}
+
+	.character-info {
+		display: none;
+		margin-top: 1.5vw;
+		position: relative;
+		height: 100%;
+		flex-wrap: wrap-reverse;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		@include breakpoint(tablet) {
+			display: flex;
+		}
+
+		p {
+			width: 30vw;
+			margin-top: 1.5vw;
+			font-size: 1.3vw;
+			line-height: 1.8vw;
+			margin-left: 3vw;
+
+			@include breakpoint(tablet) {
+				font-size: 2vw;
+				line-height: 3vw;
+			}
+
+			@include breakpoint(smallDesktop) {
+				font-size: 1.75vw;
+				line-height: 3.5vw;
+				width: 30vw;
+			}
+
+			@include breakpoint(largeDesktop) {
+				font-size: 1.6vw;
+			    line-height: 1.9vw;
+			    width: 29vw;
+			}
+
+			&:first-child{
+				display: none;
+				@include breakpoint(largeDesktop) {
+					display: initial;
+				}
+			}
+
+			&:nth-child(2){
+				display: none;
+				@include breakpoint(largeDesktop) {
+					display: initial;
+				}
+			}
+		}
+	}
+}
+
+.character-info--mobile {
+	background-color: black;
+	line-height: 5.2vw;
+	font-size: 3.75vw;
+	padding: 5vw;
+	margin-bottom: 5vw;
+	font-family: "futura-pt";
+
+	@include breakpoint(tablet) {
+		display: none;
+	}
+
+	p {
+		margin-top: 2vw;
+		margin-bottom: 2vw;
+
+		@include breakpoint(smallTablet) {
+			font-size: 2.5vw;
+		}
+	}
+
+
+}
+
+.actor-info-container {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	background-color: black;
+	margin-bottom: 10vw;
+	flex-direction: column;
+
+	@include breakpoint(tablet) {
+		//padding: 2.5vw 9vw;
+		padding: 2.5vw 5vw;
+	}
+
+	@include breakpoint(smallDesktop) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 3vw 3vw;
+	}
+
+	h1 {
+		font-size: 9vw;
+		letter-spacing: 0.15vw;
+		margin-bottom: 1.5vw;
+		margin-top: 5vw;
+		padding-left: 5vw;
+		padding-right: 5vw;
+
+		@include breakpoint(tablet) {
+			font-size: 3.75vw;
+			margin-top: 2.5vw;
+			margin-bototm: 0;
+			padding: 0;
+		}
+	}
+
+	.actor-info-content {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 5vw;
+
+		@include breakpoint(tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+			padding-bottom: 3vw;
+		}
+
+		
+		.interview-content {
+			order: 2;
+			display: flex;
+			flex-direction: column;
+
+			@include breakpoint(tablet) {
+				align-items: space-between;
+				justify-content: space-between;
+				width: 45vw;
+			}
+
+			@include breakpoint(smallDesktop) {
+				width: 55vw;
+			}
+
+			.interview-snippet {
+				width: 100%;
+				padding: 2.5vw 5vw;
+				font-family: "futura-pt";
+
+
+				@include breakpoint(tablet) {
+					padding: 0;
+					margin-top: 1.5vw;
+				}
+
+				h2 {
+					
+					font-size: 6vw;
+					text-transform: uppercase;
+					text-decoration: underline;
+					margin: 2.5vw 0vw;
+					
+
+					@include breakpoint(smallTablet) {
+						font-size: 4vw;
+						// margin-bottom: 2vw;
+					}
+
+					@include breakpoint(tablet) {
+						font-size: 2vw;
+						margin: 0.75vw 0vw;
+					}
+
+					@include breakpoint(smallDekstop) {
+						font-size: 1.2vw;
+					}
+				}
+
+				p {
+					padding-top: 0;
+					padding-bottom: 0;
+
+					@include breakpoint(tablet) {
+						font-size: 2vw;
+						line-height: 3vw;
+					}
+
+					@include breakpoint(smallDesktop) {
+						font-size: 1.75vw;
+						line-height: 3.5vw;
+					}
+
+					@include breakpoint(largeDesktop) {
+						font-size: 1.75vw;
+						line-height: 3.5vw;
+					}
+
+				}
+			}
+		}
+
+		.actor-info-image {
+			order: 1;
+
+			background-size: cover;
+			width: 100%;
+			height: 77vw;
+			margin-top: 5vw;
+
+			@include breakpoint(tablet) {
+				height: 32vw;
+				order: 2;
+				width: 42vw;
+			}
+
+			@include breakpoint(smallDesktop) {
+				height: 24vw;
+				width: 38vw;
+			}
+
+
+			&.alison {
+				background-image: url(../img/character_pages/zoya-2.jpg);
+				background-position: right center;
+			}
+		}
+	}	
+}
+

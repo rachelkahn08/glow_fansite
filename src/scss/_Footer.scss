@@ -1,0 +1,60 @@
+
+.Footer {
+	background-color: black;
+	width: 100%;
+	padding-top: 2.5vw;
+	
+	position: relative;
+	display: flex;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+
+	@include breakpoint(tablet) {
+		padding: 2.5vw;
+	}
+
+	@include breakpoint(smallDesktop) {
+		padding: 5.5vw;
+	}
+
+
+	.Footer__links {
+		background-color: black;
+		width: 100%;
+		margin-top: 1vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: space-between;
+		flex-wrap: wrap;
+		
+		@include breakpoint(tablet) {
+			flex-direction: column;
+			height: 10vw;
+		}
+
+		.Footer__links--link {
+			color: $red;
+			width: 46vw;
+			text-align: center;
+			margin: 2vw;
+
+			@include breakpoint(tablet) {
+				width: initial;
+				text-align: left;
+				margin: 0;
+				margin-top: 1vw;
+				width: 20vw;
+			}
+
+			@include breakpoint(smallDesktop) {
+				font-size: 1vw;
+				margin-top: 2.2vw;
+				width: 26vw;
+			}
+		}
+	}
+}
+

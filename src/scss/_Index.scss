@@ -1,0 +1,25 @@
+#indexAnimationContainer {
+	height: 100%;
+	width: 100%;
+
+	#indexAnimationFirst,
+	.index-animation-even,
+	.index-animation-odd {
+		height: 70vw;
+		width: 70vw;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url(../img/header/glowgo.svg);
+		z-index: 10;
+	}
+
+	.index-animation-even,
+	.index-animation-odd {
+		opacity: 0.5;
+	}
+}
+
